@@ -8,7 +8,12 @@ const questions = [
         correctAnswer: 1
     },
 
-    
+   
+    {
+        question: "What is the current Prisedent of Pakistan?",
+        choices: ["Imran khan" ,"Ali Amin Gandapur" , "Shahbaz Shareef" , "Nawaz Shareef"],
+        correctAnswer: 3
+    }, 
 
 ];
 
