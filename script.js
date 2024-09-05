@@ -51,3 +51,7 @@ const questions = [
         correctAnswer: 3
     }
 ];
+
+// Initializing current question index and score variables
+let currentQuestionIndex = 0;
+let score = 0;
