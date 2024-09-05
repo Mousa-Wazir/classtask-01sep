@@ -15,7 +15,16 @@ const questions = [
         correctAnswer: 3
     }, 
 
+    {
+        question: "What is the name of highest mountain in the world?",
+        choices: ["K-2" ,"Qoh-hindukash" , "Koh-hamaliya" , "Mount Everest"],
+        correctAnswer: 4
+    },
+
+
+
 ];
+
 
 let currentQuestionIndex = 0;
 let score = 0;
