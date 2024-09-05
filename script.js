@@ -55,3 +55,8 @@ const questions = [
 // Initializing current question index and score variables
 let currentQuestionIndex = 0;
 let score = 0;
+// Getting HTML elements to display questions and choices
+const questionElement = document.getElementById("question");
+const choiceButtons = Array.from(document.getElementsByClassName("choice"));
+const scoreElement = document.getElementById("score");
+const nextButton = document.getElementById("next-question");
