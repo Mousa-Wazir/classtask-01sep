@@ -21,6 +21,47 @@ const questions = [
         correctAnswer: 4
     },
 
+    {
+        question: "What is the color of our national flag?",
+        choices: ["Green & White" ,"Green" , "Blue" , "Red"],
+        correctAnswer: 1
+    },
+
+    {
+        question: "What is national animal of pakistan?",
+        choices: ["Lion" ,"Deer" , "Markhor" , "Kangroo"],
+        correctAnswer: 3
+    },
+
+    {
+        question: "Who is the founder of Pakistan?",
+        choices: ["Qaid e Azam" ,"Pervaiz Musharaf" , "Liaqaut Ali Khan" , "Allama Iqbal"],
+        correctAnswer: 1
+    },
+
+    {
+        question: "What is the capital of France?",
+        choices: ["Berlin", "Madrid", "Paris", "Rome"],
+        correctAnswer: 3
+    },
+
+    {
+        question: "Which planet is known as the Red Planet?",
+        choices: ["Earth", "Mars", "Jupiter", "Saturn"],
+        correctAnswer: 1
+    },
+
+    {
+        question: "What is the largest ocean on Earth?",
+        choices: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+        correctAnswer: 3
+    },
+
+    {
+        question: "Who is the founder Of Microsoft Company?",
+        choices: ["Shahid Anwar" ,"Elon musk" , "Bill Gate" , "Marc Zuccurbarck"],
+        correctAnswer: 3
+    },
 
 
 ];
