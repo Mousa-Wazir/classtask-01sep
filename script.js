@@ -60,3 +60,20 @@ const questionElement = document.getElementById("question");
 const choiceButtons = Array.from(document.getElementsByClassName("choice"));
 const scoreElement = document.getElementById("score");
 const nextButton = document.getElementById("next-question");
+
+// Function to load and display a question on the screen
+function loadQuestion() {
+    const currentQuestion = questions[currentQuestionIndex];
+    questionElement.textContent = currentQuestion.question;
+
+    // Display choices for the current question
+    choiceButtons.forEach((button, index) => {
+        button.textContent = currentQuestion.choices[index];
+        button.dataset.choiceIndex = index;
+    });
+
+    // Disable the next button until an answer is selected
+    nextButton.disabled = true;
+}
+
+
