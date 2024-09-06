@@ -75,5 +75,23 @@ function loadQuestion() {
     // Disable the next button until an answer is selected
     nextButton.disabled = true;
 }
+// Function to check the selected answer and update score
+function checkAnswer(event) {
+    const selectedChoice = event.target;
+    const selectedAnswerIndex = parseInt(selectedChoice.dataset.choiceIndex);
+    const currentQuestion = questions[currentQuestionIndex];
 
 
+    // Check if the selected answer is correct (adjusted correctAnswer index)
+    if (selectedAnswerIndex === currentQuestion.correctAnswer - 1) {
+        selectedChoice.style.backgroundColor = "#28a745"; // Correct answer
+        score++;
+        scoreElement.textContent = score; // Update score display
+    } else {
+        selectedChoice.style.backgroundColor = "#dc3545"; // Wrong answer
+    }
+
+    // Disable all buttons after an answer is selected
+    choiceButtons.forEach(button => {
+        button.disabled = true;
+    })};
