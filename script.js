@@ -95,3 +95,55 @@ function checkAnswer(event) {
     choiceButtons.forEach(button => {
         button.disabled = true;
     })};
+
+    // Enable the next question button
+    nextButton.disabled = false;
+
+
+// Function to load the next question or display end of quiz
+function nextQuestion() {
+    currentQuestionIndex++; // Move to the next question
+
+    // Check if quiz is over
+    if (currentQuestionIndex >= questions.length) {
+        displayEndGame(); // Display final score
+    } else {
+        loadQuestion(); // Load the next question
+        resetButtons(); // Reset buttons for new question
+    }
+}
+// Function to reset buttons to default state for new question
+function resetButtons() {
+    choiceButtons.forEach(button => {
+        button.disabled = false;
+        button.style.backgroundColor = "#007BFF"; // Reset button color
+    });
+}
+
+// Function to display final score and end the quiz
+function displayEndGame() {
+    questionElement.textContent = `Quiz Over! Your final score is ${score}/${questions.length}.`; // Show final score
+    choiceButtons.forEach(button => button.remove()); // Remove answer buttons
+    nextButton.textContent = "Play Again"; // Change next button text
+    nextButton.onclick = () => window.location.reload(); // Reload page to restart quiz
+}
+
+// Event listeners for each choice button click
+choiceButtons.forEach(button => {
+    button.addEventListener("click", checkAnswer);
+});
+
+// Event listener for the next question button click
+nextButton.addEventListener("click", nextQuestion);
+
+// Keyboard interaction for answering using keys 1-4
+document.addEventListener("keydown", (event) => {
+    if (event.key >= 1 && event.key <= 4) {
+        const choiceIndex = event.key - 1;
+        choiceButtons[choiceIndex].click(); // Simulate button click based on key press
+    }
+});
+
+// Initial function to load the first question when the page is loaded
+loadQuestion();
+    
