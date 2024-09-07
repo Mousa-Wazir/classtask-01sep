@@ -55,6 +55,7 @@ const questions = [
 // Initializing current question index and score variables
 let currentQuestionIndex = 0;
 let score = 0;
+
 // Getting HTML elements to display questions and choices
 const questionElement = document.getElementById("question");
 const choiceButtons = Array.from(document.getElementsByClassName("choice"));
@@ -75,12 +76,12 @@ function loadQuestion() {
     // Disable the next button until an answer is selected
     nextButton.disabled = true;
 }
+
 // Function to check the selected answer and update score
 function checkAnswer(event) {
     const selectedChoice = event.target;
     const selectedAnswerIndex = parseInt(selectedChoice.dataset.choiceIndex);
     const currentQuestion = questions[currentQuestionIndex];
-
 
     // Check if the selected answer is correct (adjusted correctAnswer index)
     if (selectedAnswerIndex === currentQuestion.correctAnswer - 1) {
@@ -94,11 +95,11 @@ function checkAnswer(event) {
     // Disable all buttons after an answer is selected
     choiceButtons.forEach(button => {
         button.disabled = true;
-    })};
+    });
 
     // Enable the next question button
     nextButton.disabled = false;
-
+}
 
 // Function to load the next question or display end of quiz
 function nextQuestion() {
@@ -112,6 +113,7 @@ function nextQuestion() {
         resetButtons(); // Reset buttons for new question
     }
 }
+
 // Function to reset buttons to default state for new question
 function resetButtons() {
     choiceButtons.forEach(button => {
@@ -146,4 +148,3 @@ document.addEventListener("keydown", (event) => {
 
 // Initial function to load the first question when the page is loaded
 loadQuestion();
-    
